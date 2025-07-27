@@ -1,0 +1,263 @@
+/* ChatRoom.css */
+
+.chat-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: antiquewhite;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chat-header h2 {
+  font-size: 28px;
+  color:blueviolet;
+}
+
+.button {
+  padding: 10px 16px;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.user-button {
+  background-color: #e0e0e0;
+  color: black;
+  margin: 5px;
+}
+
+.active-user {
+  background-color: lightblue !important;
+}
+
+.chat-box {
+  margin-top: 20px;
+}
+
+.message-area {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+}
+
+.message {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.typing {
+  font-style:italic;
+  color: gray;
+  margin: 8px 0;
+  font-size: 10px;
+}
+
+.uploaded-image {
+  max-width: 200px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.text-input {
+  width: 100%;
+  height: 60px;
+  padding: 16px 20px;
+  font-size: 22px !important;          /* ⬅️ increased font size while typing */
+  margin-top: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+}
+
+
+
+.file-input {
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  width: 72%;
+}
+
+/* Add these to ChatRoom.css at bottom */
+
+.file-label {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  background-color:#4CAF50;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.file-label:hover {
+  background-color: #45a049;
+}
+
+.file-label input[type="file"] {
+  display: none;
+}
+
+
+.send-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+/* 🌙 Dark Mode */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark .chat-box,
+body.dark .message-area,
+body.dark .text-input {
+  background-color: #2c2c2c;
+  color: #fff;
+  border-color: #444;
+}
+
+body.dark .button {
+  background-color: #444;
+  color: #fff;
+}
+
+body.dark .button:hover {
+  background-color: #666;
+}
+
+body.dark .user-button {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark .active-user {
+  background-color: #555 !important;
+}
+
+/* Dark mode fixes for text visibility */
+
+body.dark h4,
+body.dark p,
+body.dark strong {
+  color:darkslategrey;
+  font-size: 20px;
+}
+
+body.dark .online-list li,
+body.dark .message,
+body.dark .typing {
+  color:aquamarine;
+  font-size: 20px;
+}
+
+body.dark .file-label {
+  color: white;
+}
+
+body.dark .active-user {
+  background-color: #444 !important;
+  color: white !important;
+}
+
+body.dark .chat-header h2 {
+  color:blueviolet;
+}
+
+/* 🌙 DARK MODE CHAT AREA FIXES */
+
+body.dark .chat-box {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+body.dark .message-area {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  color: #ddd;
+}
+
+body.dark .message {
+  color: #e0e0e0;
+}
+
+body.dark .message a {
+  color: #4ea3ff;
+  text-decoration: underline;
+}
+
+body.dark .message strong {
+  color: #fff;
+}
+
+body.dark .uploaded-image {
+  border: 1px solid #555;
+}
+
+body.dark .typing {
+  color: #bbbbbb;
+}
+
+body.dark .text-input {
+  background-color: #2a2a2a;
+  color: white;
+  border: 1px solid #555;
+  font-size: 20px;
+}
+
+body.dark .text-input::placeholder {
+  color: #cccccc;
+}
+
+body.dark .send-button {
+  background-color: #444;
+  color: white;
+}
+
+body.dark .send-button:hover {
+  background-color: #666;
+}
+
+body.dark .text-input {
+  background-color: #2a2a2a;
+  color: white;
+  height: 3.5vh;
+  border: 1px solid #555;
+}
+
+body.dark .text-input::placeholder {
+  color: #cccccc;
+}
