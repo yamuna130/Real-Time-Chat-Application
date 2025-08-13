@@ -1,10 +1,9 @@
-const express = require('express');
+import express from "express";
+import { sendMessage, getMessages } from "../controllers/messageController.js";
+
 const router = express.Router();
-const verifyToken = require('../middleware/authMiddleware');
-const { getMessages, sendMessage } = require('../controllers/messageController');
 
-// Only logged-in users can access these
-router.get('/', verifyToken, getMessages);
-router.post('/', verifyToken, sendMessage);
+router.post("/", sendMessage);
+router.get("/:senderId/:receiverId", getMessages);
 
-module.exports = router;
+export default router;
