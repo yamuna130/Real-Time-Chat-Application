@@ -10,7 +10,7 @@ import { Server } from "socket.io";
 import authRoutes from "./routes/authRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
-import { setupSocket } from "./socket.js";
+import setupSocket from "./socket.js";
 
 dotenv.config();
 
@@ -66,3 +66,4 @@ mongoose
     });
   })
   .catch((err) => console.error("❌ MongoDB connection error:", err));
+
