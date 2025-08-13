@@ -1,36 +1,27 @@
-const Message = require('../models/Message');
+import Message from "../models/messageModel.js";
 
-// GET /api/messages
-const getMessages = async (req, res) => {
+export const sendMessage = async (req, res) => {
   try {
-    const messages = await Message.find().sort({ createdAt: 1 });
-    res.status(200).json(messages);
-  } catch (error) {
-    res.status(500).json({ message: 'Error fetching messages' });
+    const { senderId, receiverId, text, fileUrl } = req.body;
+    const msg = await Message.create({ senderId, receiverId, text, fileUrl });
+    res.status(201).json(msg);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
   }
 };
 
-// POST /api/messages
-const sendMessage = async (req, res) => {
-  const { text } = req.body;
-  const user = req.user; // comes from verified JWT in authMiddleware
-
-  if (!text || !user) {
-    return res.status(400).json({ message: 'Text and user required' });
-  }
-
+export const getMessages = async (req, res) => {
   try {
-    const newMessage = new Message({
-      user: user.id,
-      username: user.username,
-      text,
-    });
-
-    await newMessage.save();
-    res.status(201).json(newMessage);
-  } catch (error) {
-    res.status(500).json({ message: 'Error sending message' });
+    const { senderId, receiverId } = req.params;
+    const messages = await Message.find({
+      $or: [
+        { senderId, receiverId },
+        { senderId: receiverId, receiverId: senderId }
+      ]
+    }).sort({ createdAt: 1 });
+    res.json(messages);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
   }
 };
 
-module.exports = { getMessages, sendMessage };
