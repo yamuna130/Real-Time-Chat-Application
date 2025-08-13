@@ -5,18 +5,9 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
   },
-  "keywords": [
-    "chat",
-    "backend",
-    "express",
-    "socket.io",
-    "mongodb",
-    "render"
-  ],
-  "author": "Your Name",
+  "keywords": ["chat", "backend", "express", "socket.io", "mongodb", "render"],
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -26,9 +17,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.3",
     "socket.io": "^4.7.5"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.3"
   },
   "engines": {
     "node": ">=18.x"
